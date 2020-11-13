@@ -1,11 +1,12 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- * 通过请求转发实现全局刷新
+ * 用应答对象实现全局刷新
  */
-public class BmiServlet extends javax.servlet.http.HttpServlet {
+public class BmiPrintServlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     }
@@ -34,11 +35,16 @@ public class BmiServlet extends javax.servlet.http.HttpServlet {
         }
         System.out.println("msg="+msg);
         msg=name+"您的bmi值是"+bmi+","+msg;
-        //把数据存入request
-        request.setAttribute("msg",msg);
 
-        //转发到新的页面
-        request.getRequestDispatcher("/result.jsp").forward(request,response);
-
+        //使用httpservletresponse输出数据
+        response.setContentType("text/html;charset=utf-8");
+        //获取PrintWriter对象
+        PrintWriter pw=response.getWriter();
+        //输出数据
+        pw.println(msg);
+        //清空缓存（使输出的数据立刻输出给浏览器）
+        pw.flush();
+        //关闭
+        pw.close();
     }
 }

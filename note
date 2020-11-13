@@ -64,3 +64,6 @@ Ajax主要是做局部刷新的------核心对象是异步对象（存在浏览�
         xmlhttp.responseText;
 
     回调：当请求状态发送变化时，异步对象会自动调用onreadystatechange事件对应的函数（函数会执行好多次）
+
+    访问地址   使用get方式传参
+    http://localhost:8080/ajax_learning_war_exploded/bmiprint?name=aaa&w=82&h=1.82

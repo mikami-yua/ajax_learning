@@ -11,4 +11,23 @@
         <servlet-name>BmiServlet</servlet-name>
         <url-pattern>/bmiservlet</url-pattern>
     </servlet-mapping>
+
+    <!--使用httpservletresponse输出数据-->
+    <servlet>
+        <servlet-name>BmiPrintServlet</servlet-name>
+        <servlet-class>controller.BmiPrintServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BmiPrintServlet</servlet-name>
+        <url-pattern>/bmiprint</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BmiAjaxServlet</servlet-name>
+        <servlet-class>controller.BmiAjaxServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BmiAjaxServlet</servlet-name>
+        <url-pattern>/bmiajax</url-pattern>
+    </servlet-mapping>
 </web-app>
