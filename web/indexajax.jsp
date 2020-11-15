@@ -19,7 +19,10 @@
           //处理服务器端返回的数据更新当前页面
           //alert("readyState(0-4)属性值："+xmlhttp.readyState+" |status: "+xmlhttp.status);
           if(xmlhttp.readyState==4 && xmlhttp.status==200){
-            alert(xmlhttp.responseText);
+            //alert(xmlhttp.responseText);
+            var  data=xmlhttp.responseText;
+            //更新到对象
+            document.getElementById("mydata").innerText=data
           }
         }
         //3.初始请求参数
@@ -29,7 +32,7 @@
         var h=document.getElementById("h").value;
         //bmiprint?name=aaa&w=82&h=1.82
         var param="name="+name+"&"+"w="+w+"&"+"h="+h;
-        alert("param: "+param);
+        //alert("param: "+param);
         xmlhttp.open("get","bmiajax?"+param,true);
         //4.发起请求
         xmlhttp.send();
@@ -45,6 +48,9 @@
       体重：<input type="text" id="w" /><br>
       身高：<input type="text" id="h" /><br>
       <input type="button" value="计算bmi" onclick="doAjax()" />
+      <br>
+      <br>
+      <div id="mydata">等待加载数据。。。</div>
     </div>
   </body>
 </html>
