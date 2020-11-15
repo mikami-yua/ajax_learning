@@ -17,10 +17,20 @@
         //2.绑定事件
         xmlhttp.onreadystatechange=function () {
           //处理服务器端返回的数据更新当前页面
-
+          //alert("readyState(0-4)属性值："+xmlhttp.readyState+" |status: "+xmlhttp.status);
+          if(xmlhttp.readyState==4 && xmlhttp.status==200){
+            alert(xmlhttp.responseText);
+          }
         }
         //3.初始请求参数
-        xmlhttp.open("get","bmiajax",true);
+        //获取DOM对象的value值
+        var name=document.getElementById("name").value;
+        var w=document.getElementById("w").value;
+        var h=document.getElementById("h").value;
+        //bmiprint?name=aaa&w=82&h=1.82
+        var param="name="+name+"&"+"w="+w+"&"+"h="+h;
+        alert("param: "+param);
+        xmlhttp.open("get","bmiajax?"+param,true);
         //4.发起请求
         xmlhttp.send();
       }

@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * 用应答对象实现全局刷新
@@ -12,7 +13,6 @@ public class BmiAjaxServlet extends javax.servlet.http.HttpServlet {
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         System.out.println("接收了ajax的请求");
-        /*
         //接收请求参数
         String name = request.getParameter("name");
         String height=request.getParameter("h");
@@ -37,6 +37,16 @@ public class BmiAjaxServlet extends javax.servlet.http.HttpServlet {
         System.out.println("msg="+msg);
         msg=name+"您的bmi值是"+bmi+","+msg;
 
+        //响应ajax需要的数据，使用httpservletresponse输出数据
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter pw=response.getWriter();
+        pw.println(msg);
+        pw.flush();
+        pw.close();
+
+
+
+        /*
         //使用httpservletresponse输出数据
         response.setContentType("text/html;charset=utf-8");
         //获取PrintWriter对象
