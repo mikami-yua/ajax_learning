@@ -30,4 +30,13 @@
         <servlet-name>BmiAjaxServlet</servlet-name>
         <url-pattern>/bmiajax</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>QueryProvice</servlet-name>
+        <servlet-class>controller.QueryProviceServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryProvice</servlet-name>
+        <url-pattern>/queryprovice</url-pattern>
+    </servlet-mapping>
 </web-app>

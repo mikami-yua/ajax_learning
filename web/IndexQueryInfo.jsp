@@ -17,10 +17,17 @@
             var xmlhttp=new XMLHttpRequest();
             //2.绑定事件
             xmlhttp.onreadystatechange = function () {
-                alert(xmlhttp.readyState)
+                //alert(xmlhttp.readyState);
+                if(xmlhttp.readyState==4 && xmlhttp.status==200){
+                    //alert(xmlhttp.responseText);
+                    //更新页面，更新dom对象
+                    document.getElementById("proname").value=xmlhttp.responseText;
+                }
             }
             //3.初始异步对象
-            xmlhttp.open("get","queryprovice",true);
+            //获取文本框的值
+            var proid = document.getElementById("proid").value;
+            xmlhttp.open("get","queryprovice?proid="+proid,true);
             //4.发送请求
             xmlhttp.send();
         }

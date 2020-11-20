@@ -20,7 +20,7 @@ public class ProvinceDao {
         //加载驱动
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            DriverManager.getConnection(url,username,password);
+            conn=DriverManager.getConnection(url,username,password);
 
             //创建PreparedStatement
             sql="select name from province where id=?";
