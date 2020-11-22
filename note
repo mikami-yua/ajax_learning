@@ -67,3 +67,30 @@ Ajax主要是做局部刷新的------核心对象是异步对象（存在浏览�
 
     访问地址   使用get方式传参
     http://localhost:8080/ajax_learning_war_exploded/bmiprint?name=aaa&w=82&h=1.82
+
+4.使用json：
+    ajax发起请求------servlet（返回一个json形式的字符串{name："河北"，jiancheng："冀",shenghui:"石家庄"}）
+
+    json分类：json对象：JSONObject格式是k：v对  ps：{name："河北"，jiancheng："冀",shenghui:"石家庄"}
+             json数组：JSONArray格式[{json对象}，{json对象}]
+
+    使用json的原因
+        1.格式好理解
+        2.在多种语言中容易处理
+        3.占用空间小，网络中传输快
+
+    使用jackson工具库------把java对象转为一个json格式的字符串
+    著名工具库：
+        Gson
+        fastjson
+        jackson
+
+    在js中将json格式的字符串转成对象，key就是json对象的属性名
+
+5.异步和同步
+    xmlhttp.open("get","queryjson?proid="+proid,true);
+    true表示是异步处理请求的
+    异步：异步对象发起请求后，不用等待数据处理完毕九年执行其他的操作。
+
+    false代表同步
+    同步：异步对象必须处理请求，从服务器获得数据之后才能执行send之后的代码，任意时刻只能处理一个请求

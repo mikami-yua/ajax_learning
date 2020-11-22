@@ -39,4 +39,13 @@
         <servlet-name>QueryProvice</servlet-name>
         <url-pattern>/queryprovice</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>QueryJsonServlet</servlet-name>
+        <servlet-class>controller.QueryJsonServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryJsonServlet</servlet-name>
+        <url-pattern>/queryjson</url-pattern>
+    </servlet-mapping>
 </web-app>
